@@ -1,0 +1,96 @@
+/********************************************************************
+ *  Copyright 2025 Adobe
+ *  All Rights Reserved.
+ *
+ * NOTICE:  Adobe permits you to use, modify, and distribute this 
+ * file in accordance with the terms of the Adobe license agreement 
+ * accompanying it. 
+ *******************************************************************/
+
+/* https://cssguidelin.es/#bem-like-naming */
+
+.newsletter-newsletter-form {
+  background: var(--color-neutral-50);
+  border: var(--shape-border-width-1) solid var(--color-neutral-300);
+  border-left: var(--shape-border-width-4) solid var(--color-brand-500);
+  border-radius: var(--shape-border-radius-2);
+  box-shadow: var(--shape-shadow-1);
+  box-sizing: border-box;
+  color: var(--color-neutral-900);
+  display: grid;
+  gap: var(--spacing-medium);
+  max-width: 40rem;
+  padding: var(--spacing-large);
+  text-align: left;
+}
+
+.newsletter-newsletter-form__intro {
+  display: grid;
+  gap: var(--spacing-xxsmall);
+}
+
+.newsletter-newsletter-form__title {
+  font: var(--type-headline-2-strong-font);
+  letter-spacing: var(--type-headline-2-strong-letter-spacing);
+  margin: 0;
+}
+
+.newsletter-newsletter-form__title:empty,
+.newsletter-newsletter-form__description:empty,
+.newsletter-newsletter-form__message:empty {
+  display: none;
+}
+
+.newsletter-newsletter-form__description {
+  color: var(--color-neutral-700);
+  font: var(--type-body-2-default-font);
+  letter-spacing: var(--type-body-2-default-letter-spacing);
+  margin: 0;
+}
+
+.newsletter-newsletter-form__controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+}
+
+.newsletter-newsletter-form__email {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+}
+
+button.newsletter-newsletter-form__submit {
+  height: 56px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.newsletter-newsletter-form__message {
+  font: var(--type-details-caption-1-font);
+  letter-spacing: var(--type-details-caption-1-letter-spacing);
+  margin: 0;
+}
+
+.newsletter-newsletter-form__message--error {
+  color: var(--color-alert-800);
+}
+
+.newsletter-newsletter-form__message--success {
+  color: var(--color-positive-800);
+}
+
+/* Medium (portrait tablets and large phones, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .newsletter-newsletter-form__controls {
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  button.newsletter-newsletter-form__submit {
+    flex: 0 0 auto;
+    min-width: 9.5rem;
+    width: auto;
+  }
+}

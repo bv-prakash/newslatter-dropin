@@ -1,3 +1,14 @@
 {
-    "": {}
+  "Newsletter": {
+    "Form": {
+      "title": "Subscribe to our newsletter",
+      "description": "Be the first to hear about new products, offers, and stories.",
+      "emailLabel": "Email address",
+      "submit": "Subscribe",
+      "submitting": "Subscribing...",
+      "invalidEmail": "Enter a valid email address.",
+      "success": "Thanks for subscribing.",
+      "error": "We couldn't subscribe you. Please try again."
+    }
+  }
 }

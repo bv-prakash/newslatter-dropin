@@ -52,15 +52,16 @@
       // GraphQL Client
       import * as mesh from '@dropins/tools/fetch-graphql.js';
 
-      // import { render as provider } from 'my-pkg/render.js';
-      // import <Container> from 'my-pkg/containers/<Container>.js';
+      import { render as provider } from 'my-pkg/render.js';
+      import NewsletterContainer from 'my-pkg/containers/NewsletterContainer.js';
+
+      const endpoint = 'https://na1-sandbox.api.commerce.adobe.com/4XR4RKXgJjQXaxUCMC6TN3/graphql';
 
       // Initialize GraphQl Client (Mesh)
-      // Mesh Endpoint
-      mesh.setEndpoint('mock-endpoint');
+      mesh.setEndpoint(endpoint);
 
       // Initialize GraphQl Client (PKG)
-      // pkg.setEndpoint(...);
+      pkg.setEndpoint(endpoint);
 
       // Registers a new initializer. If the initializers have already been mounted, 
       // it immediately binds the event listeners and initializes the API for the new initializer.
@@ -70,11 +71,19 @@
       // This involves binding the event listeners and initializing the APIs for each initializer, in that order.
       initializers.mount();
 
-      // provider.render(<Container>)(document.getElementById('my-container'));
+      provider.render(NewsletterContainer, {})(document.getElementById('my-container'));
+
+      events.on('newsletter/subscribed', (payload) => {
+        const output = document.getElementById('data');
+
+        if (output) {
+          output.textContent = JSON.stringify(payload, null, 2);
+        }
+      });
     </script>
 
     <div id="app">
-      <h1 id="title">💻</h1>
+      <h1 id="title">Newsletter</h1>
 
       <div class="cards">
         <div class="card card--black">
@@ -86,8 +95,8 @@
             <button id="action-1">Action</button>
           </fieldset>
 
-          <code data-label="fetchGraphQl">
-            <pre id="data">⏳ Loading...</pre>
+          <code data-label="newsletter/subscribed">
+            <pre id="data">Subscribe with the form to see the event.</pre>
           </code>
         </div>
 

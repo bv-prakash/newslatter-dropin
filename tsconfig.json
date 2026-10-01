@@ -6,10 +6,21 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "@adobe-commerce/elsie/*": ["./node_modules/@adobe-commerce/elsie/src/*"],
-      "@/dropin-name/*": ["./src/*"]
+      "@adobe-commerce/elsie/*": [
+        "./node_modules/@adobe-commerce/elsie/src/*"
+      ],
+      "@/dropin-name/*": [
+        "./src/*"
+      ],
+      "@/newsletter/*": [
+        "./src/*"
+      ]
     }
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
