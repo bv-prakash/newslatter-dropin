@@ -1,0 +1,154 @@
+/********************************************************************
+ *  Copyright 2025 Adobe
+ *  All Rights Reserved.
+ *
+ * NOTICE:  Adobe permits you to use, modify, and distribute this 
+ * file in accordance with the terms of the Adobe license agreement 
+ * accompanying it. 
+ *******************************************************************/
+
+.newsletter-subscription {
+  box-sizing: border-box;
+  color: var(--color-neutral-900);
+  max-width: 40rem;
+  text-align: left;
+}
+
+.newsletter-subscription__title {
+  font: var(--type-headline-2-strong-font);
+  letter-spacing: var(--type-headline-2-strong-letter-spacing);
+  margin: 0;
+}
+
+.newsletter-subscription__status {
+  color: var(--color-neutral-700);
+  font: var(--type-body-2-default-font);
+  letter-spacing: var(--type-body-2-default-letter-spacing);
+  margin: var(--spacing-xxsmall) 0 0;
+}
+
+.newsletter-subscription--minified {
+  align-items: center;
+  background: var(--color-neutral-50);
+  border: var(--shape-border-width-1) solid var(--color-neutral-300);
+  border-radius: var(--shape-border-radius-2);
+  display: grid;
+  gap: var(--spacing-small);
+  grid-template-columns: 1fr auto;
+  padding: var(--spacing-medium);
+}
+
+.newsletter-subscription--minified .newsletter-subscription__message {
+  grid-column: 1 / -1;
+}
+
+.newsletter-subscription--options {
+  display: grid;
+  gap: var(--spacing-medium);
+  justify-items: start;
+}
+
+.newsletter-subscription__choice {
+  align-items: flex-start;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 14px auto;
+  column-gap: var(--spacing-xsmall);
+  position: relative;
+}
+
+.newsletter-subscription__input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.newsletter-subscription__box {
+  background: var(--color-neutral-50);
+  border: var(--shape-border-width-1) solid var(--color-neutral-600);
+  border-radius: var(--shape-border-radius-1);
+  box-sizing: border-box;
+  height: 14px;
+  margin-top: 0.15rem;
+  width: 14px;
+}
+
+.newsletter-subscription__box::after {
+  border-bottom: var(--shape-border-width-2) solid transparent;
+  border-left: var(--shape-border-width-2) solid transparent;
+  content: '';
+  display: block;
+  height: 4px;
+  margin: 2px 0 0 2px;
+  transform: rotate(-45deg);
+  width: 7px;
+}
+
+.newsletter-subscription__choice:hover .newsletter-subscription__box {
+  border-color: var(--color-neutral-800);
+}
+
+.newsletter-subscription__input:checked + .newsletter-subscription__box,
+.newsletter-subscription__choice:hover
+  .newsletter-subscription__input:checked
+  + .newsletter-subscription__box {
+  background: var(--color-neutral-700);
+  border-color: transparent;
+}
+
+.newsletter-subscription__input:checked + .newsletter-subscription__box::after {
+  border-color: var(--color-neutral-50);
+}
+
+.newsletter-subscription__input:focus-visible + .newsletter-subscription__box {
+  outline: var(--shape-border-width-3) solid var(--color-neutral-400);
+}
+
+.newsletter-subscription__choice-label {
+  color: var(--color-neutral-800);
+  font: var(--type-body-2-default-font);
+  letter-spacing: var(--type-body-2-default-letter-spacing);
+}
+
+.newsletter-subscription__input:disabled + .newsletter-subscription__box,
+.newsletter-subscription__input:disabled ~ .newsletter-subscription__choice-label {
+  color: var(--color-neutral-500);
+}
+
+.newsletter-subscription__input:disabled + .newsletter-subscription__box {
+  background: var(--color-neutral-300);
+  border-color: var(--color-neutral-500);
+}
+
+.newsletter-subscription__choice:has(.newsletter-subscription__input:disabled) {
+  cursor: default;
+}
+
+.newsletter-subscription__save {
+  min-width: 6.5rem;
+  justify-content: center;
+}
+
+.newsletter-subscription__message {
+  font: var(--type-details-caption-1-font);
+  letter-spacing: var(--type-details-caption-1-letter-spacing);
+  margin: 0;
+}
+
+.newsletter-subscription__message:empty {
+  display: none;
+}
+
+.newsletter-subscription__message--error {
+  color: var(--color-alert-800);
+}
+
+.newsletter-subscription__message--success {
+  color: var(--color-positive-800);
+}

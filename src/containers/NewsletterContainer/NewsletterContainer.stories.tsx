@@ -32,4 +32,25 @@ type Story = StoryObj<NewsletterContainerProps>;
  * import { NewsletterContainer } from '@/newsletter/containers/NewsletterContainer';
  * ```
  */
+/**
+ * Email field and Subscribe button. Leave Minified view unset.
+ */
 export const NewsletterContainer: Story = {};
+
+/**
+ * Minified view true. Edit opens the newsletter page.
+ */
+export const Minified: Story = {
+  args: {
+    minified: true,
+  },
+};
+
+/**
+ * Minified view false. Checkbox and SAVE update the customer subscription.
+ */
+export const SubscriptionOption: Story = {
+  args: {
+    minified: false,
+  },
+};

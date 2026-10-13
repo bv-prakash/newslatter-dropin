@@ -6,5 +6,8 @@ declare module '@adobe-commerce/event-bus' {
       email: string;
       status: 'NOT_ACTIVE' | 'SUBSCRIBED' | 'UNSUBSCRIBED' | 'UNCONFIRMED';
     };
+    'newsletter/updated': {
+      subscribed: boolean;
+    };
   }
 }

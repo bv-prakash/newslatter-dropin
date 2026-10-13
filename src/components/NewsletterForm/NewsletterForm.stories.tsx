@@ -25,6 +25,7 @@ const meta: Meta<NewsletterFormProps> = {
     description: 'Be the first to hear about new products, offers, and stories.',
     email: '',
     emailLabel: 'Email address',
+    emailPlaceholder: 'Enter your email address',
     submitLabel: 'Subscribe',
     onEmailChange: () => undefined,
     onSubmit: (event) => event.preventDefault(),

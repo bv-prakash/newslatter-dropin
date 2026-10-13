@@ -1,0 +1,25 @@
+{
+  "data": [
+    { "Key": "Newsletter.Form.title", "Value": "Subscribe to our newsletter" },
+    { "Key": "Newsletter.Form.description", "Value": "Be the first to hear about new products, offers, and stories." },
+    { "Key": "Newsletter.Form.emailLabel", "Value": "Email address" },
+    { "Key": "Newsletter.Form.emailPlaceholder", "Value": "Enter your email address" },
+    { "Key": "Newsletter.Form.submit", "Value": "Subscribe" },
+    { "Key": "Newsletter.Form.submitting", "Value": "Subscribing..." },
+    { "Key": "Newsletter.Form.invalidEmail", "Value": "Enter a valid email address." },
+    { "Key": "Newsletter.Form.success", "Value": "Thanks for subscribing." },
+    { "Key": "Newsletter.Form.error", "Value": "We couldn't subscribe you. Please try again." },
+    { "Key": "Newsletter.Minified.title", "Value": "Newsletter" },
+    { "Key": "Newsletter.Minified.subscribed", "Value": "Subscribed to the general newsletter." },
+    { "Key": "Newsletter.Minified.unsubscribed", "Value": "Not subscribed." },
+    { "Key": "Newsletter.Minified.edit", "Value": "Edit" },
+    { "Key": "Newsletter.Subscription.title", "Value": "Subscription option" },
+    { "Key": "Newsletter.Subscription.general", "Value": "General Subscription" },
+    { "Key": "Newsletter.Subscription.save", "Value": "SAVE" },
+    { "Key": "Newsletter.Subscription.saving", "Value": "Saving..." },
+    { "Key": "Newsletter.Subscription.saved", "Value": "Subscription saved." },
+    { "Key": "Newsletter.Subscription.error", "Value": "We couldn't update your subscription. Please try again." },
+    { "Key": "Newsletter.Status.loading", "Value": "Loading subscription..." },
+    { "Key": "Newsletter.Status.loadError", "Value": "We couldn't load your subscription. Please try again." }
+  ]
+}

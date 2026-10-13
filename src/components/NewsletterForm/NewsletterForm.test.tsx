@@ -16,6 +16,7 @@ import { NewsletterForm } from '@/newsletter/components/NewsletterForm';
 const baseProps = {
   email: '',
   emailLabel: 'Email address',
+  emailPlaceholder: 'Enter your email address',
   submitLabel: 'Subscribe',
   onEmailChange: jest.fn(),
   onSubmit: jest.fn(),
@@ -44,9 +45,10 @@ describe('Newsletter/Components/NewsletterForm', () => {
     expect(form?.className).toContain('extra');
     expect(getByRole('heading', { name: 'Subscribe to our newsletter' })).toBeTruthy();
     expect(container.textContent).toContain('Be the first to hear about new products.');
-    expect((getByLabelText('Email address') as HTMLInputElement).value).toBe(
-      'reader@example.com'
-    );
+    const emailField = getByLabelText('Email address') as HTMLInputElement;
+
+    expect(emailField.value).toBe('reader@example.com');
+    expect(emailField.placeholder).toBe('Enter your email address');
     expect(getByRole('button', { name: 'Subscribe' })).toBeTruthy();
   });
 

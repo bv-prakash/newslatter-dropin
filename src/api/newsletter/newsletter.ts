@@ -52,3 +52,73 @@ export const subscribeToNewsletter = async (
 
   return subscription;
 };
+
+const CUSTOMER_SUBSCRIPTION = `
+  query customerNewsletterSubscription {
+    customer {
+      is_subscribed
+    }
+  }
+`;
+
+interface CustomerSubscriptionResponse {
+  customer: { is_subscribed: boolean } | null;
+}
+
+export const getCustomerSubscription = async (): Promise<boolean> => {
+  const response = await fetchGraphQl<CustomerSubscriptionResponse>(
+    CUSTOMER_SUBSCRIPTION
+  );
+
+  if (response.errors) {
+    throw new Error(response.errors[0].message);
+  }
+
+  const customer = response.data && response.data.customer;
+
+  if (!customer) {
+    throw new Error('Unable to load the newsletter subscription.');
+  }
+
+  return customer.is_subscribed;
+};
+
+const UPDATE_CUSTOMER_SUBSCRIPTION = `
+  mutation updateNewsletterSubscription($input: CustomerUpdateInput!) {
+    updateCustomerV2(input: $input) {
+      customer {
+        is_subscribed
+      }
+    }
+  }
+`;
+
+interface UpdateCustomerSubscriptionResponse {
+  updateCustomerV2: {
+    customer: { is_subscribed: boolean } | null;
+  } | null;
+}
+
+export const updateCustomerSubscription = async (
+  isSubscribed: boolean
+): Promise<boolean> => {
+  const response = await fetchGraphQl<UpdateCustomerSubscriptionResponse>(
+    UPDATE_CUSTOMER_SUBSCRIPTION,
+    { variables: { input: { is_subscribed: isSubscribed } } }
+  );
+
+  if (response.errors) {
+    throw new Error(response.errors[0].message);
+  }
+
+  const updated =
+    response.data &&
+    response.data.updateCustomerV2 &&
+    response.data.updateCustomerV2.customer;
+
+  if (!updated) {
+    throw new Error('Unable to update the newsletter subscription.');
+  }
+
+  return updated.is_subscribed;
+};

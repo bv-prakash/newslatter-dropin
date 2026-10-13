@@ -4,11 +4,30 @@
       "title": "Subscribe to our newsletter",
       "description": "Be the first to hear about new products, offers, and stories.",
       "emailLabel": "Email address",
+      "emailPlaceholder": "Enter your email address",
       "submit": "Subscribe",
       "submitting": "Subscribing...",
       "invalidEmail": "Enter a valid email address.",
       "success": "Thanks for subscribing.",
       "error": "We couldn't subscribe you. Please try again."
+    },
+    "Minified": {
+      "title": "Newsletter",
+      "subscribed": "Subscribed to the general newsletter.",
+      "unsubscribed": "Not subscribed.",
+      "edit": "Edit"
+    },
+    "Subscription": {
+      "title": "Subscription option",
+      "general": "General Subscription",
+      "save": "SAVE",
+      "saving": "Saving...",
+      "saved": "Subscription saved.",
+      "error": "We couldn't update your subscription. Please try again."
+    },
+    "Status": {
+      "loading": "Loading subscription...",
+      "loadError": "We couldn't load your subscription. Please try again."
     }
   }
 }

@@ -19,8 +19,8 @@
   color: var(--color-neutral-900);
   display: grid;
   gap: var(--spacing-medium);
-  max-width: 40rem;
-  padding: var(--spacing-large);
+  max-width: 60rem;
+  padding: var(--spacing-small);
   text-align: left;
 }
 
@@ -57,11 +57,24 @@
 .newsletter-newsletter-form__email {
   flex: 1 1 auto;
   min-width: 0;
+  position: relative;
   width: 100%;
 }
 
+.newsletter-newsletter-form__label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 button.newsletter-newsletter-form__submit {
-  height: 56px;
+  height: var(--spacing-xbig);
   justify-content: center;
   text-align: center;
   width: 100%;
@@ -84,7 +97,7 @@ button.newsletter-newsletter-form__submit {
 /* Medium (portrait tablets and large phones, 768px and up) */
 @media only screen and (min-width: 768px) {
   .newsletter-newsletter-form__controls {
-    align-items: flex-start;
+    align-items: center;
     flex-direction: row;
   }
 

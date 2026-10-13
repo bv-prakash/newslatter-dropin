@@ -19,6 +19,7 @@ export interface NewsletterFormProps
   description?: string;
   email: string;
   emailLabel: string;
+  emailPlaceholder: string;
   submitLabel: string;
   loading?: boolean;
   error?: string;
@@ -33,6 +34,7 @@ export const NewsletterForm: FunctionComponent<NewsletterFormProps> = ({
   description,
   email,
   emailLabel,
+  emailPlaceholder,
   submitLabel,
   loading,
   error,
@@ -67,11 +69,14 @@ export const NewsletterForm: FunctionComponent<NewsletterFormProps> = ({
 
       <div className="newsletter-newsletter-form__controls">
         <div className="newsletter-newsletter-form__email">
+          <label className="newsletter-newsletter-form__label" htmlFor="newsletter-email">
+            {emailLabel}
+          </label>
           <Input
+            id="newsletter-email"
             name="email"
             type="email"
-            floatingLabel={emailLabel}
-            placeholder=" "
+            placeholder={emailPlaceholder}
             value={email}
             autoComplete="email"
             autoCapitalize="off"
